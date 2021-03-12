@@ -1,24 +1,54 @@
 # README
+ProtSpace ER図
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+usersテーブル
 
-Things you may want to cover:
+Column       ｜ Type    | Options     |
+ - - - - - - - - - - - - - - - - - - - 
+｜ name       | string  | null: false |
+｜ email |    | string  | null: false |
+｜ password   | string  | null: false |
+|  profile    | text    | null: false |
+|  occupation | text    | null: false |
+|  position   | text    | null: false | 
 
-* Ruby version
+Association
+- has_many : comments
+- has_many : prototype
 
-* System dependencies
+commentsテーブル
 
-* Configuration
+Column      ｜ Type       | Options                        |
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+｜ tittle    | text       | null: false                    |
+｜ user      | references | null: false, foreign_key: true |
+｜ prototype | references | null: false, foreign_key: true |
 
-* Database creation
+Association
+- belong_to : user
+- belong_to : prototypes
 
-* Database initialization
+prototypesテーブル
 
-* How to run the test suite
+Column       ｜ Type                | Options     |
+ - - - - - - - - - - - - - - - - - - - - - - - - -
+｜ title      | string              | null: false |
+｜ catch_copy | text                | null: false |
+｜ concept    | text                | null: false |
+| image       | #ActiveStorageで実施 |             |
+| user        | references          |             |
 
-* Services (job queues, cache servers, search engines, etc.)
+Association
+- has_many users
+- has_many comments
 
-* Deployment instructions
+user_prototypes
 
-* ...
+Column       ｜ Type      | Options                      |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ user        | references | null: false , foreign_key: true
+ prototype   | references | null: false , foreign_key: true
+
+Association
+- belong_to users
+- belong_to prototypes
