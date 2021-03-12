@@ -17,5 +17,4 @@ ActiveRecord::Schema.define(version: 2021_03_12_115918) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-    t.string "email", default: "", null: false
 end
