@@ -19,6 +19,12 @@ class PrototypesController < ApplicationController
       render :new 
     end
 
+    def show
+      @prototype = Prototype.find[:id]
+
+      
+    end
+
     
   end
 
