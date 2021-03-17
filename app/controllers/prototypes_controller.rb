@@ -5,6 +5,7 @@ class PrototypesController < ApplicationController
 
     
   end
+
   def new
     @prototype = Prototype.new
     
@@ -19,11 +20,10 @@ class PrototypesController < ApplicationController
       render :new 
     end
 
-    def show
-      @prototype = Prototype.find[:id]
+   end
 
-      
-    end
+   def show
+    @prototype = Prototype.find(params[:id])
 
     
   end
