@@ -2,7 +2,7 @@
   <div class="inner">
     <div class="user__wrapper">
       <h2 class="page-heading">
-        <%= "ユーザー名さんの情報"%>
+        <%= "#{@user.name}さんの情報" %>
       </h2>
       <table class="table">
         <tbody>
@@ -16,7 +16,6 @@
           </tr>
           <tr>
             <th class="table__col1">所属</th>
-      t.string   :reset_password_token
             <td class="table__col2"><%= @user.occupation %></td>
           </tr>
           <tr>
